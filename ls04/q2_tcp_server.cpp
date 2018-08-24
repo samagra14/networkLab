@@ -8,6 +8,8 @@
   #include <arpa/inet.h>
   #include <unistd.h>
 
+  #define	MAXLINE		4096s
+
   int
   main(int argc, char **argv)
   {
