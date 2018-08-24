@@ -1,0 +1,139 @@
+
+#200&0
+Why IPv4 Datagram Fragmentation required?
+Different Networks may have different maximum transmission unit (MTU), for example due to differences in LAN technology. When one network wants to transmit da
+#200&1
+tagrams to a network with a smaller MTU, the routesrs on path may fragment and reassemble datagrams.
+
+How is Fragmentation done?
+When a packet is received at the router, destination address is examine
+#200&2
+d and MTU is determined. If size of the packet is bigger than the MTU, and the ‘Do not Fragment (DF)’ bit is set to 0 in header, then the packet is fragmented into parts and sent one by one. The m
+#200&3
+aximum size of each fragment is the MTU minus the IP header size (Minimum 20 bytes and Maximum 60 bytes).
+
+Each fragment is converted to a packet and the following changes happen in the datagram heade
+#200&4
+r:
+
+The total length field is changed to the size of the fragment.
+The More Fragment bit (MF bit) is set for all the fragment packets except the last one.
+The fragment offset field is set, based on th
+#200&5
+e number of fragment that is being set and the MTU.
+Header Checksum is re-calculated.
+Why IPv4 Datagram Fragmentation required?
+Different Networks may have different maximum transmission unit (MTU), f
+#200&6
+or example due to differences in LAN technology. When one network wants to transmit datagrams to a network with a smaller MTU, the routesrs on path may fragment and reassemble datagrams.
+
+How is Fragm
+#200&7
+entation done?
+When a packet is received at the router, destination address is examined and MTU is determined. If size of the packet is bigger than the MTU, and the ‘Do not Fragment (DF)’ bit is s
+#200&8
+et to 0 in header, then the packet is fragmented into parts and sent one by one. The maximum size of each fragment is the MTU minus the IP header size (Minimum 20 bytes and Maximum 60 bytes).
+
+Each fr
+#200&9
+agment is converted to a packet and the following changes happen in the datagram header:
+
+The total length field is changed to the size of the fragment.
+The More Fragment bit (MF bit) is set for all t
+#200&10
+he fragment packets except the last one.
+The fragment offset field is set, based on the number of fragment that is being set and the MTU.
+Header Checksum is re-calculated.
+
+Why IPv4 Datagram Fragmenta
+#200&11
+tion required?
+Different Networks may have different maximum transmission unit (MTU), for example due to differences in LAN technology. When one network wants to transmit datagrams to a network with a
+#200&12
+ smaller MTU, the routesrs on path may fragment and reassemble datagrams.
+
+How is Fragmentation done?
+When a packet is received at the router, destination address is examined and MTU is determined. If
+#200&13
+ size of the packet is bigger than the MTU, and the ‘Do not Fragment (DF)’ bit is set to 0 in header, then the packet is fragmented into parts and sent one by one. The maximum size of each fragmen
+#200&14
+t is the MTU minus the IP header size (Minimum 20 bytes and Maximum 60 bytes).
+
+Each fragment is converted to a packet and the following changes happen in the datagram header:
+
+The total length field 
+#200&15
+is changed to the size of the fragment.
+The More Fragment bit (MF bit) is set for all the fragment packets except the last one.
+The fragment offset field is set, based on the number of fragment that i
+#200&16
+s being set and the MTU.
+Header Checksum is re-calculated.
+Why IPv4 Datagram Fragmentation required?
+Different Networks may have different maximum transmission unit (MTU), for example due to differenc
+#200&17
+es in LAN technology. When one network wants to transmit datagrams to a network with a smaller MTU, the routesrs on path may fragment and reassemble datagrams.
+
+How is Fragmentation done?
+When a packe
+#200&18
+t is received at the router, destination address is examined and MTU is determined. If size of the packet is bigger than the MTU, and the ‘Do not Fragment (DF)’ bit is set to 0 in header, then the
+#200&19
+ packet is fragmented into parts and sent one by one. The maximum size of each fragment is the MTU minus the IP header size (Minimum 20 bytes and Maximum 60 bytes).
+
+Each fragment is converted to a pa
+#200&20
+cket and the following changes happen in the datagram header:
+
+The total length field is changed to the size of the fragment.
+The More Fragment bit (MF bit) is set for all the fragment packets except 
+#200&21
+the last one.
+The fragment offset field is set, based on the number of fragment that is being set and the MTU.
+Header Checksum is re-calculated.
+Why IPv4 Datagram Fragmentation required?
+Different Net
+#200&22
+works may have different maximum transmission unit (MTU), for example due to differences in LAN technology. When one network wants to transmit datagrams to a network with a smaller MTU, the routesrs o
+#200&23
+n path may fragment and reassemble datagrams.
+
+How is Fragmentation done?
+When a packet is received at the router, destination address is examined and MTU is determined. If size of the packet is bigge
+#200&24
+r than the MTU, and the ‘Do not Fragment (DF)’ bit is set to 0 in header, then the packet is fragmented into parts and sent one by one. The maximum size of each fragment is the MTU minus the IP he
+#200&25
+ader size (Minimum 20 bytes and Maximum 60 bytes).
+
+Each fragment is converted to a packet and the following changes happen in the datagram header:
+
+The total length field is changed to the size of th
+#200&26
+e fragment.
+The More Fragment bit (MF bit) is set for all the fragment packets except the last one.
+The fragment offset field is set, based on the number of fragment that is being set and the MTU.
+Hea
+#200&27
+der Checksum is re-calculated.
+Why IPv4 Datagram Fragmentation required?
+Different Networks may have different maximum transmission unit (MTU), for example due to differences in LAN technology. When o
+#200&28
+ne network wants to transmit datagrams to a network with a smaller MTU, the routesrs on path may fragment and reassemble datagrams.
+
+How is Fragmentation done?
+When a packet is received at the router,
+#200&29
+ destination address is examined and MTU is determined. If size of the packet is bigger than the MTU, and the ‘Do not Fragment (DF)’ bit is set to 0 in header, then the packet is fragmented into p
+#200&30
+arts and sent one by one. The maximum size of each fragment is the MTU minus the IP header size (Minimum 20 bytes and Maximum 60 bytes).
+
+Each fragment is converted to a packet and the following chang
+#200&31
+es happen in the datagram header:
+
+The total length field is changed to the size of the fragment.
+The More Fragment bit (MF bit) is set for all the fragment packets except the last one.
+The fragment o
+#117&32
+ffset field is set, based on the number of fragment that is being set and the MTU.
+Header Checksum is re-calculated.
