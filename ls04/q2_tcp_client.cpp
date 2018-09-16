@@ -14,7 +14,10 @@ int main(int argc, char **argv)
     int sockfd, n = 0;
     char recvline[1000 + 1];
     struct sockaddr_in servaddr;
-	int port = 13;
+    int port;
+    printf("\n Enter the port no:");
+    scanf("%d",&port);
+    printf("The port no is:%d\n",port);
 
 	if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf( "Socket printfor");

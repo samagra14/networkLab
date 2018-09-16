@@ -42,9 +42,15 @@ strcpy(hello, s.c_str());
         printf("\nConnection Failed \n");
         return -1;
     }
+    while(true){
+      cin>>s;
+      char *hello = new char[s.length() + 1];
+      strcpy(hello, s.c_str());
+      char buffer[1024] = {0};
     send(sock , hello , strlen(hello) , 0 );
     printf("Hello message sent\n");
     valread = read( sock , buffer, 1024);
     printf("%s\n",buffer );
-    return 0;
+  }
+  return 0;
 }

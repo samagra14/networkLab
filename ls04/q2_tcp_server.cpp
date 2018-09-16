@@ -7,8 +7,9 @@
   #include <string.h>
   #include <arpa/inet.h>
   #include <unistd.h>
+  using namespace std;
 
-  #define	MAXLINE		4096s
+  #define	MAXLINE		4096
 
   int
   main(int argc, char **argv)
@@ -18,24 +19,29 @@
       char    buff[MAXLINE];
       time_t ticks;
 
-     listenfd = Socket(AF_INET, SOCK_STREAM, 0);
+     listenfd = socket(AF_INET, SOCK_STREAM, 0);
+     int port ;
+     printf("\n Enter the port no:");
+     scanf("%d",&port);
+     printf("The port no is:%d\n",port);
 
-     bzeros(&servaddr, sizeof(servaddr));
+     bzero(&servaddr, sizeof(servaddr));
      servaddr.sin_family = AF_INET;
      servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-     servaddr.sin_port = htons(13); /* daytime server */
+     servaddr.sin_port = htons(port); /* daytime server */
 
-     Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
+     bind(listenfd, (sockaddr *) &servaddr, sizeof(servaddr));
 
-     Listen(listenfd, LISTENQ);
+     listen(listenfd, 4);
 
      for ( ; ; ) {
-         connfd = Accept(listenfd, (SA *) NULL, NULL);
+         connfd = accept(listenfd, (sockaddr *) NULL, NULL);
 
          ticks = time(NULL);
          snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
-         Write(connfd, buff, strlen(buff));
+         write(connfd, buff, strlen(buff));
+         cout<<"Sent date info as "<< buff<<endl;
 
-         Close(connfd);
+         close(connfd);
      }
  }

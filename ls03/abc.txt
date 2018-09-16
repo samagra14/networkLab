@@ -1,0 +1,36 @@
+
+IP fragmentation
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+
+An example of the fragmentation of a protocol data unit in a given layer into smaller fragments.
+IP fragmentation is an Internet Protocol (IP) process that breaks packets into smaller pieces (fragments), so that the resulting pieces can pass through a link with a smaller maximum transmission unit (MTU) than the original packet size. The fragments are reassembled by the receiving host.
+
+RFC 791 describes the procedure for IP fragmentation, and transmission and reassembly of IP packets.[1] RFC 815 describes a simplified reassembly algorithm.[2] The Identification field along with the foreign and local internet address and the protocol ID, and Fragment offset field along with Don't Fragment and More Fragment flags in the IP protocol header are used for fragmentation and reassembly of IP packets.[1]:24[2]:9
+
+If a receiving host receives a fragmented IP packet, it has to reassemble the packet and pass it to the higher protocol layer. Reassembly is intended to happen in the receiving host but in practice it may be done by an intermediate router, for example, network address translation (NAT) may need to reassemble fragments in order to translate data streams.[3]
+
+The details of the fragmentation mechanism, as well as the overall architectural approach to fragmentation, are different between IPv4, and IPv6.
+
+
+Contents
+1	Impact of fragmentation on network forwarding
+2	IPv4 and IPv6 differences
+3	See also
+4	References
+5	External links
+Impact of fragmentation on network forwarding
+
+The fragmentation algorithm in IPv4.
+
+An example of IPv4 multiple fragmentation. The fragmentation takes place in two levels. In the first one, The maximum transmission unit is 4000 bytes, and the second it is 2500 bytes.
+When a network has multiple parallel paths, technologies like LAG and CEF split traffic across the paths according to a hash algorithm. One goal of the algorithm is to ensure all packets of the same flow are sent out the same path to minimize unnecessary packet reordering.
+
+IP fragmentation can cause excessive retransmissions when fragments encounter packet loss and reliable protocols such as TCP must retransmit all of the fragments in order to recover from the loss of a single fragment.[4] Thus, senders typically use two approaches to decide the size of IP packets to send over the network. The first is for the sending host to send an IP packet of size equal to the MTU of the first hop of the source destination pair. The second is to run the path MTU discovery algorithm,[5] to determine the path MTU between two IP hosts, so that IP fragmentation can be avoided.
+
+IPv4 and IPv6 differences
+Under IPv4, a router that receives a network packet larger than the next hop's MTU has two options: drop the packet and send an Internet Control Message Protocol (ICMP) message which indicates the condition Packet too Big, or fragment the packet and send it over the link with a smaller MTU. Although originators may produce fragmented packets, IPv6 routers do not have the option to fragment further. Instead, network equipment is required to deliver any IPv6 packets or packet fragments smaller than or equal to 1280 bytes and IPv6 hosts are required to determine the optimal MTU through path MTU discovery before sending packets.
+
+Though the header formats are different for IPv4 and IPv6, analogous fields are used for fragmentation, so the same algorithm can be reused for IPv4 and IPv6 fragmentation and reassembly.
+
+In IPv4, hosts must make a best-effort attempt to reassemble fragmented IP packets with a total reassembled size of up to 576 bytes. They may also attempt to reassemble fragmented IP packets larger than 576 bytes, but they are also permitted to silently discard such larger packets. Applications are recommended to refrain from sending packets larger than 576 bytes unless they have prior knowledge that the remote host is capable of accepting or reassembling them.[1]:12
